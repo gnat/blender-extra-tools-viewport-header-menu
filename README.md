@@ -4,7 +4,7 @@ Blender 3D add-on for more tools in the 3D Viewport header menu. Gives you a few
 
 ## Why does this exist?
 
-We all love Blender for Artists (bforartists) but it can be a bit huge and behind the latest Blender versions. Get some conveniences here without the bloat. Zero dependency add-on.
+We all love Blender for Artists (bforartists) but it can be a bit huge and behind the latest Blender versions. Get some conveniences here without the fork. Zero dependency add-on.
 
 Adds buttons in the 3D Viewport for:
 
