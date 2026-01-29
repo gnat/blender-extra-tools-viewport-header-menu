@@ -25,3 +25,7 @@ Adds convenience buttons in the 3D Viewport for:
 
 * Linux: `~/.config/blender/5.1/scripts/addons/`
 * Windows: `C:\Users\USER\AppData\Roaming\Blender Foundation\Blender\5.1\scripts\addons`
+
+<img width="396" height="408" alt="image" src="https://github.com/user-attachments/assets/cca725e5-be5e-4457-bcae-22a3f2fb6506" />
+
+<img width="1031" height="900" alt="image" src="https://github.com/user-attachments/assets/c88898f5-41b5-4637-983d-0405bc2d6f6a" />
