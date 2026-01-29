@@ -1,6 +1,6 @@
 # 🧊 Extra Tools for Viewport Header Menu
 
-Blender 3D add-on for more tools in the 3D Viewport header menu. Gives you a few Blender for Artists features in vanilla Blender.
+Blender 3D add-on for more tools in the 3D Viewport header menu. Gives you a few Blender for Artists conveniences in vanilla Blender.
 
 ## Why does this exist?
 
