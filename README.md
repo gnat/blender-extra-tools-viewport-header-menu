@@ -1,19 +1,17 @@
 # 🧊 Extra Tools for Viewport Header Menu
 
-Blender 3D add-on for more tools in the 3D Viewport header menu.
-
-Inspired by Blender for Artists (bforartists)
+Blender 3D add-on for more tools in the 3D Viewport header menu. Gives you a few Blender for Artists features in vanilla Blender.
 
 ## Why does this exist?
 
-We all love Blender for Artists (bforartists) but it can be a bit big and behind mainline Blender. Here's some of the main conveniences seperated out in a zero dependency add-on package for the latest Blender versions.
+We all love Blender for Artists (bforartists) but it can be a bit huge and behind the latest Blender versions. Get some conveniences here without the bloat. Zero dependency add-on.
 
-Adds convenience buttons in the 3D Viewport for:
+Adds buttons in the 3D Viewport for:
 
+* Global Search
 * Common views (Front, Top, Bottom, Left, Right, Back)
 * Undo / Redo
 * Import / Export
-* Global Search
 
 ## 👁️ How does it look?
 
