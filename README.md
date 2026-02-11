@@ -15,7 +15,8 @@ Adds buttons in the 3D Viewport for:
 
 ## 👁️ How does it look?
 
-<img width="745" height="474" alt="image" src="https://github.com/user-attachments/assets/869ed8f1-7815-4edf-99fe-9a753ae118c4" />
+<img width="671" height="414" alt="image" src="https://github.com/user-attachments/assets/03c048e8-3bf6-4cc9-adf3-a6dbb2b5a08b" />
+
 
 ## 🎁 Install
 
