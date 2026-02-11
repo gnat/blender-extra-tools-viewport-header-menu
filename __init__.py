@@ -1,7 +1,7 @@
 bl_info = {
 	"name": "Extra Tools for Viewport Header Menu",
 	"author": "gnat",
-	"version": (1, 1),
+	"version": (1, 2),
 	"blender": (5, 0, 0),
 	"location": "3D Viewport Header",
 	"description": "Adds extra conveniences for Search, Import / Export, Undo / Redo and common Views",
@@ -38,34 +38,20 @@ def draw_viewport_header_tools(self, context):
 
 	row.separator()
 
-	# Undo / Redo buttons
+	# Undo / Redo
 	row.operator("ed.undo", text="", icon='LOOP_BACK')
 	row.operator("ed.redo", text="", icon='LOOP_FORWARDS')
 
 	row.separator()
 
-	# Import dropdown
-	row.menu(
-		"TOPBAR_MT_file_import",
-		text="",
-		icon='IMPORT'
-	)
-
-	# Export dropdown
-	row.menu(
-		"TOPBAR_MT_file_export",
-		text="",
-		icon='EXPORT'
-	)
+	# Import / Export
+	row.menu("TOPBAR_MT_file_import", text="", icon='IMPORT')
+	row.menu("TOPBAR_MT_file_export", text="", icon='EXPORT')
 
 	row.separator()
 
-	# Global Search button
-	row.operator(
-		"wm.open_global_search",
-		text="",
-		icon='VIEWZOOM'
-	)
+	# Global Search
+	row.operator("wm.open_global_search", text="", icon='VIEWZOOM')
 
 def register():
 	bpy.utils.register_class(WM_OT_open_global_search)
