@@ -1,10 +1,6 @@
-# 🧊 Extra Tools for Viewport Header Menu
+# 🧊 Blender: Extra Tools for Viewport Header Menu
 
-Blender 3D add-on for more tools in the 3D Viewport header menu. Gives you a few Blender for Artists conveniences in vanilla Blender.
-
-## Why does this exist?
-
-We all love Blender for Artists (bforartists) but it can be a bit huge and behind the latest Blender versions. Get some conveniences here without the fork. Zero dependency add-on.
+Get some conveniences of Blender for Artists. Zero dependency add-on.
 
 Adds buttons in the 3D Viewport for:
 
@@ -12,18 +8,20 @@ Adds buttons in the 3D Viewport for:
 * Common views (Front, Top, Bottom, Left, Right, Back)
 * Undo / Redo
 * Import / Export
+* Unreal Engine export
 
 ## 👁️ How does it look?
 
-<img width="671" height="414" alt="image" src="https://github.com/user-attachments/assets/03c048e8-3bf6-4cc9-adf3-a6dbb2b5a08b" />
+<img width="581" height="340" alt="image" src="https://github.com/user-attachments/assets/2aa09071-d84c-4d66-be98-048a0728fb38" />
+
 
 
 ## 🎁 Install
 
 [Download](https://github.com/gnat/blender-extra-tools-viewport-header-menu/archive/refs/heads/main.zip) and extract `blender-extra-tools-viewport-header-menu` into your Blender addons folder.
 
-* Linux: `~/.config/blender/5.1/scripts/addons/`
-* Windows: `C:\Users\USER\AppData\Roaming\Blender Foundation\Blender\5.1\scripts\addons`
+* Linux: `~/.config/blender/5.3/scripts/addons/`
+* Windows: `C:\Users\USER\AppData\Roaming\Blender Foundation\Blender\5.3\scripts\addons`
 
 <img width="396" height="408" alt="image" src="https://github.com/user-attachments/assets/cca725e5-be5e-4457-bcae-22a3f2fb6506" />
 
