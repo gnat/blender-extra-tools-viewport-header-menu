@@ -33,6 +33,9 @@ Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Subs
   * **Animations:**
     * Export animations seperately to update them without wiping out your model/material setup in Unreal.
     * Animations exported are from the NLE editor. Remember to push them down.
+    * Keep polycount reasonable, especially for animated characters. (No > 1 million poly assets, please)
+    * If you get animations shrinking, is because the size and/or scale isnt right.
+    * Root bone needs to be renamed from the default "**Armature**" otherwise import error saying the ref post is incorrect.
 * 🟩 Substance Painter
   * **Export textures using the Unreal preset:** It will give you Base, Normal and ORM, AO.
   * **Unwrap from Blender:** Turn auto-unwrapping OFF.
@@ -41,3 +44,5 @@ Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Subs
   * **Import:** Content Drawer ➡️ New Folder ➡️ Import
     * Choose your favorite master material on the Import screen. Avoids having to re-assign dozens of bad master materials.
       * Something with Base, Normal and ORM texture slots is a great start (For Substance Textures).
+  * 🔰 Common Errors
+    * "Ref pose is incorrect" Your root bone is named "Armature" add a period or rename it.
