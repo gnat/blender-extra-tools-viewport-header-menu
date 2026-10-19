@@ -1,4 +1,4 @@
-# 🧊 Blender: Extra Tools for Viewport Header Menu
+# 🧊 Blender: Game Art Quick Tools
 
 Adds often used features for Game Developers into the header bar. Tiny, zero dependency add-on. 
 
@@ -13,7 +13,7 @@ Adds often used features for Game Developers into the header bar. Tiny, zero dep
 
 ## 🎁 Install
 
-[Download](https://github.com/gnat/blender-extra-tools-viewport-header-menu/archive/refs/heads/main.zip) and extract `blender-extra-tools-viewport-header-menu` into your Blender addons folder.
+[Download](https://github.com/gnat/blender-game-art-quick-tools/archive/refs/heads/main.zip) and extract `blender-game-art-quick-tools` into your Blender addons folder.
 
 * Linux: `~/.config/blender/5.3/scripts/addons/`
 * Windows: `C:\Users\USER\AppData\Roaming\Blender Foundation\Blender\5.3\scripts\addons`
