@@ -25,19 +25,19 @@ Enable it: Start Blender ➡️ Edit ➡️ Preferences ... ➡️ Add-ons ➡�
 Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Substance ➡️ Import into UE). You'll hit every pipeline problem on something small and cheap to fix.
 
 * 🟧 Blender
-  * **Transforms** Apply all transforms: Object Mode ➡️ CTRL+A ➡️ All Transforms (Scale!)
-  * **Origins** Set pivot for Unreal: Put it where the object should "sit". (Bottom center for props.)
-  * **Normals** Find invisible faces: Header ➡️ Overlays ➡️ Face Orientation. (Red faces will look broken or missing in Unreal.)
-  * **Materials** Keep one material per texture set and rebuild the material in Unreal. (Blender material nodes don't transfer.)
-  * **UVs** Every mesh needs to be unwrapped if you want textures on it.
-  * **Animations**
+  * **Transforms:** Apply all transforms. Object Mode ➡️ CTRL+A ➡️ All Transforms (Scale, at minimum)
+  * **Origins:** Set pivot for Unreal. Put it where the object should "sit". (Bottom center for props.)
+  * **Normals:** Find invisible faces. Header ➡️ Overlays ➡️ Face Orientation. (Red faces will look broken or missing in Unreal.)
+  * **Materials:** Keep one material per texture set and rebuild the material in Unreal. (Blender material nodes do NOT transfer.)
+  * **UVs:** Every mesh needs to be unwrapped if you want textures on it.
+  * **Animations:**
     * Export animations seperately to update them without wiping out your model/material setup in Unreal.
     * Animations exported are from the NLE editor. Remember to push them down.
 * 🟩 Substance Painter
-  * **Export textures using the Unreal preset** It will give you Base, Normal and ORM, AO.
-  * **Unwrap from Blender** Turn auto-unwrapping OFF.
+  * **Export textures using the Unreal preset:** It will give you Base, Normal and ORM, AO.
+  * **Unwrap from Blender:** Turn auto-unwrapping OFF.
     * You can technically use Substance Painter Auto Unwrap if you re-import the fbx into blender: Object Mode ➡️ Select Object ➡️ Link/Transfer Data ➡️ Copy UV Maps.
 * 🟦 Unreal
-  * **Import** Content Drawer ➡️ New Folder ➡️ Import
+  * **Import:** Content Drawer ➡️ New Folder ➡️ Import
     * Choose your favorite master material on the Import screen. Avoids having to re-assign dozens of bad master materials.
       * Something with Base, Normal and ORM texture slots is a great start (For Substance Textures).
