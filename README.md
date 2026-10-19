@@ -20,11 +20,11 @@ Adds often used features for Game Developers into the header bar. Tiny, zero dep
 
 Enable it: Start Blender ➡️ Edit ➡️ Preferences ... ➡️ Add-ons ➡️ Extra Tools for Viewport Header Menu ✅
 
-## Unreal to Blender Workflow
+## 🟧 Blender to 🟩 Substance to 🟦 Unreal Workflow
 
 Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Substance ➡️ Import into UE). You'll hit every pipeline problem on something small and cheap to fix.
 
-* Blender
+* 🟧 Blender
   * Apply all transforms before exporting.
     * Object Mode ➡️ CTRL+A ➡️ Scale (or even All Transforms)
     * Origins: Put it where the object should "sit" (bottom center for props. It becomes the pivot in Unreal!)
@@ -37,7 +37,12 @@ Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Subs
   * Animations
     * Export animations seperately to update them without wiping out your model/material setup in Unreal.
     * Animations exported are from the NLE editor. Remember to push them down.
-* Unreal
+* 🟩 Substance Painter
+  * Export textures using the Unreal preset: It will give you Base, Normal and ORM, AO.
+  * 
+  * Turn auto-unwrapping OFF. Unwrap from Blender.
+    * You can technically use Substance Painter Auto Unwrap if you re-import the fbx into blender: Object Mode ➡️ Select Object ➡️ Link/Transfer Data ➡️ Copy UV Maps.
+* 🟦 Unreal
   * Content Drawer ➡️ New Folder ➡️ Import
     * Choose your favorite master material on the Import screen. Avoids having to re-assign dozens of bad master materials.
       * Something with Base, Normal and ORM texture slots is a great start (For Substance Textures).
