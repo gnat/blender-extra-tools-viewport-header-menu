@@ -22,16 +22,22 @@ Enable it: Start Blender ➡️ Edit ➡️ Preferences ... ➡️ Add-ons ➡�
 
 ## Unreal to Blender Workflow
 
+Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Substance ➡️ Import into UE). You'll hit every pipeline problem on something small and cheap to fix.
+
 * Blender
   * Apply all transforms before exporting.
     * Object Mode ➡️ CTRL+A ➡️ Scale (or even All Transforms)
     * Origins: Put it where the object should "sit" (bottom center for props. It becomes the pivot in Unreal!)
   * Normals
     * Overlays ➡️ Face Orientation. Red faces will look broken or invisible in Unreal.
-  * UVs
-    * Every
   * Materials
     * Blender material nodes don't transfer. Keep one material per texture set and rebuild the material in Unreal.
+  * UVs
+    * Every mesh needs to be unwrapped if you want textures on it
+  * Animations
+    * Export animations seperately to update them without wiping out your model/material setup in Unreal.
+    * Animations exported are from the NLE editor. Remember to push them down.
 * Unreal
   * Content Drawer ➡️ New Folder ➡️ Import
-    * Choose the base master material that you can drag in your textures to. Avoid having to re-assign a bad one.
+    * Choose your favorite master material on the Import screen. Avoids having to re-assign dozens of bad master materials.
+      * Something with Base, Normal and ORM texture slots is a great start (For Substance Textures).
