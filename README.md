@@ -23,6 +23,20 @@ Adds buttons in the 3D Viewport for:
 * Linux: `~/.config/blender/5.3/scripts/addons/`
 * Windows: `C:\Users\USER\AppData\Roaming\Blender Foundation\Blender\5.3\scripts\addons`
 
-<img width="396" height="408" alt="image" src="https://github.com/user-attachments/assets/cca725e5-be5e-4457-bcae-22a3f2fb6506" />
+Enable it: Start Blender ➡️ Edit ➡️ Preferences ... ➡️ Add-ons ➡️ Extra Tools for Viewport Header Menu ✅
 
-<img width="1031" height="900" alt="image" src="https://github.com/user-attachments/assets/c88898f5-41b5-4637-983d-0405bc2d6f6a" />
+## Unreal to Blender Workflow
+
+* Blender
+  * Apply all transforms before exporting.
+    * Object Mode ➡️ CTRL+A ➡️ Scale (or even All Transforms)
+    * Origins: Put it where the object should "sit" (bottom center for props. It becomes the pivot in Unreal!)
+  * Normals
+    * Overlays ➡️ Face Orientation. Red faces will look broken or invisible in Unreal.
+  * UVs
+    * Every
+  * Materials
+    * Blender material nodes don't transfer. Keep one material per texture set and rebuild the material in Unreal.
+* Unreal
+  * Content Drawer ➡️ New Folder ➡️ Import
+    * Choose the base master material that you can drag in your textures to. Avoid having to re-assign a bad one.
