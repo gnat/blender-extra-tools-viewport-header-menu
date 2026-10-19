@@ -1,10 +1,10 @@
 bl_info = {
-	"name": "Extra Tools for Viewport Header Menu",
+	"name": "Game Art Quick Tools",
 	"author": "gnat",
-	"version": (1, 2),
+	"version": (2, 0),
 	"blender": (5, 0, 0),
 	"location": "3D Viewport Header",
-	"description": "Adds convenient views, search, import/export, undo/redo and Unreal export",
+	"description": "Adds convenient views, search, import/export, and Unreal export",
 	"category": "Interface",
 }
 
@@ -62,8 +62,15 @@ class WM_OT_export_unreal_engine(bpy.types.Operator, ExportHelper):
 	bl_options = {'REGISTER', 'UNDO'}
 	filename_ext = ".fbx"
 	filter_glob: bpy.props.StringProperty(default="*.fbx", options={'HIDDEN'})
+	export_mode: bpy.props.EnumProperty(name="Export", items=(
+		('EVERYTHING', "Everything", "Export objects and animations"),
+		('ANIMATIONS_ONLY', "Animations Only", "Export armatures, empties and animations without meshes"),
+		('NO_ANIMATIONS', "No Animations", "Export objects without animations")), default='NO_ANIMATIONS')
 	set_object_pivot: bpy.props.BoolProperty(name="Reset Origins", description="Reset objects to the scene origin", default=False)
-	selected_only: bpy.props.BoolProperty(name="Selection Only", description="Export selected objects only", default=False)
+	export_scope: bpy.props.EnumProperty(name="Objects", items=(
+		('VISIBLE_ONLY', "Visible Only", "Export visible objects only"),
+		('SELECTED_ONLY', "Selected Only", "Export selected objects only"),
+		('EVERYTHING', "Everything", "Export all objects")), default='VISIBLE_ONLY')
 	combine_child_meshes: bpy.props.BoolProperty(name="Combine Child Meshes", description="Join visible mesh children into their parent mesh", default=False)
 	unpack: bpy.props.BoolProperty(name="Unpacked FBX", description="Do not embed textures inside FBX", default=False)
 	fix_materials: bpy.props.BoolProperty(name="Fix Roughness and Metallic", description="Blender to Unreal material fix.", default=True)
@@ -125,43 +132,52 @@ class WM_OT_export_unreal_engine(bpy.types.Operator, ExportHelper):
 
 	def draw(self, context):
 		layout = self.layout
-		layout.prop(self, "selected_only")
-		layout.prop(self, "set_object_pivot")
-		layout.prop(self, "combine_child_meshes")
-		layout.prop(self, "unpack")
-		layout.prop(self, "fix_materials")
+		layout.prop(self, "export_mode")
+		layout.prop(self, "export_scope")
+		column = layout.column()
+		column.enabled = self.export_mode != 'ANIMATIONS_ONLY'
+		column.prop(self, "set_object_pivot")
+		column.prop(self, "combine_child_meshes")
+		column.prop(self, "unpack")
+		column.prop(self, "fix_materials")
 		layout.label(text="UNDO changes after export.", icon='INFO')
 
 	def execute(self, context):
 		if context.object and context.object.mode != 'OBJECT':
 			bpy.ops.object.mode_set(mode='OBJECT')
-		for obj in context.view_layer.objects:
-			obj.select_set(obj.visible_get())
-		if not context.selected_objects:
-			self.report({'WARNING'}, "No visible objects to export")
+		if self.export_scope != 'SELECTED_ONLY':
+			for obj in context.view_layer.objects:
+				obj.select_set(obj.visible_get())
+		object_types = {'ARMATURE', 'EMPTY'} if self.export_mode == 'ANIMATIONS_ONLY' else {'ARMATURE', 'MESH', 'OTHER', 'EMPTY'}
+		objects = context.view_layer.objects if self.export_scope == 'EVERYTHING' else context.selected_objects
+		if not objects or (self.export_mode == 'ANIMATIONS_ONLY' and not any(obj.type in object_types for obj in objects)):
+			self.report({'WARNING'}, "No matching objects to export")
 			return {'CANCELLED'}
-		if self.fix_materials:
-			self.apply_material_fixes()
-		if self.combine_child_meshes:
-			root_meshes = [obj for obj in context.selected_objects if obj.type == "MESH" and (obj.parent is None or obj.parent.type != "MESH" or not obj.parent.select_get())]
-			for mesh in root_meshes:
-				self.join_mesh_children(context, mesh)
-		if self.set_object_pivot:
-			for obj in context.selected_objects:
-				if self.combine_child_meshes and obj.parent:
-					continue
-				obj.matrix_world = Matrix.Identity(4)
+		if self.export_mode != 'ANIMATIONS_ONLY':
+			if self.fix_materials:
+				self.apply_material_fixes()
+			if self.combine_child_meshes:
+				root_meshes = [obj for obj in context.selected_objects if obj.type == "MESH" and (obj.parent is None or obj.parent.type != "MESH" or not obj.parent.select_get())]
+				for mesh in root_meshes:
+					self.join_mesh_children(context, mesh)
+			if self.set_object_pivot:
+				for obj in context.selected_objects:
+					if self.combine_child_meshes and obj.parent:
+						continue
+					obj.matrix_world = Matrix.Identity(4)
 
 		try:
 			result = bpy.ops.export_scene.fbx(filepath=self.filepath,
 				axis_forward='-Z',
 				axis_up='Y',
 				check_existing=False,
-				object_types={'ARMATURE', 'MESH', 'OTHER', 'EMPTY'}, #'CAMERA', 'LIGHT',
+				object_types=object_types, #'CAMERA', 'LIGHT',
 				mesh_smooth_type='FACE', # Prevent undefined smoothing group warnings in Unreal
-				use_selection=self.selected_only,
+				use_selection=self.export_scope == 'SELECTED_ONLY',
+				use_visible=self.export_scope == 'VISIBLE_ONLY',
 				use_custom_props=True,
 				apply_scale_options='FBX_SCALE_NONE',
+				bake_anim=self.export_mode != 'NO_ANIMATIONS',
 				bake_anim_use_nla_strips=True,
 				bake_anim_use_all_actions=True,
 				add_leaf_bones=False,
@@ -206,3 +222,4 @@ def unregister():
 
 if __name__ == "__main__":
 	register()
+
