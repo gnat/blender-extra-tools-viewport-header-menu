@@ -1,20 +1,15 @@
 # 🧊 Blender: Extra Tools for Viewport Header Menu
 
-Get some conveniences of Blender for Artists. Zero dependency add-on.
+Adds often used features for Game Developers into the header bar. Tiny, zero dependency add-on. 
 
-Adds buttons in the 3D Viewport for:
-
-* Global Search
-* Common views (Front, Top, Bottom, Left, Right, Back)
-* Undo / Redo
-* Import / Export
-* Unreal Engine export
+* Quick switch viewpoints. Switch orientations more intuitively (inspired by [Blender for Artists](https://www.bforartists.de/)).
+* Quick Import / Export
+* Special **Unreal Engine** export (inspired by [Blend File Importer](https://www.fab.com/listings/5f84f927-88b0-44b1-8757-ac2caccab624))
+* Quick Global Search
 
 ## 👁️ How does it look?
 
-<img width="581" height="340" alt="image" src="https://github.com/user-attachments/assets/2aa09071-d84c-4d66-be98-048a0728fb38" />
-
-
+<img alt="image" src="https://github.com/user-attachments/assets/33eef43c-f531-43cf-9f7e-5faaca40a9ec" />
 
 ## 🎁 Install
 
