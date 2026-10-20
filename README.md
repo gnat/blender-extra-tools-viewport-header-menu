@@ -24,6 +24,8 @@ Enable it: Start Blender ➡️ Edit ➡️ Preferences ... ➡️ Add-ons ➡�
 
 Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Substance ➡️ Import into UE). You'll hit every pipeline problem on something small and cheap to fix.
 
+UE5 Mannequin Explained: https://www.youtube.com/watch?v=CgqYlF45fcM
+
 * 🟧 Blender
   * **Modifiers:** Apply all modifiers. Object ➡️ Convert ➡️ Mesh
   * **Transforms:** Apply all transforms. Object Mode ➡️ CTRL+A ➡️ All Transforms (Scale, at minimum)
