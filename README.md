@@ -25,7 +25,9 @@ Enable it: Start Blender ➡️ Edit ➡️ Preferences ... ➡️ Add-ons ➡�
 Take ONE simple prop all the way through (Model ➡️ UV ➡️ Texture in Substance ➡️ Import into UE). You'll hit every pipeline problem on something small and cheap to fix.
 
 * 🟧 Blender
+  * **Modifiers:** Apply all modifiers. Object ➡️ Convert ➡️ Mesh
   * **Transforms:** Apply all transforms. Object Mode ➡️ CTRL+A ➡️ All Transforms (Scale, at minimum)
+  * **Join all meshes:** Object Mode ➡️ CTRL+J
   * **Origins:** Set pivot for Unreal. Put it where the object should "sit". (Bottom center for props.)
   * **Normals:** Find invisible faces. Header ➡️ Overlays ➡️ Face Orientation. (Red faces will look broken or missing in Unreal.)
   * **Materials:** Keep one material per texture set and rebuild the material in Unreal. (Blender material nodes do NOT transfer.)
