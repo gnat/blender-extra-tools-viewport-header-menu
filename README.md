@@ -40,10 +40,11 @@ UE5 Mannequin Explained: https://www.youtube.com/watch?v=CgqYlF45fcM
     * Keep polycount reasonable, especially for animated characters. (No > 1 million poly assets, please)
     * If you get animations shrinking, is because the size and/or scale isnt right.
     * Root bone needs to be renamed from the default "**Armature**" otherwise import error saying the ref post is incorrect.
+  * **Paint Weight Optimise** Weight Paint Mode ➡️ Vertex Selection Mode ➡️ Select All ➡️ Weights ➡️ Limit Total. Don't go lower than 4.
 * 🟩 Substance Painter
   * **Export textures using the Unreal preset:** It will give you Base, Normal and ORM, AO.
   * **Unwrap from Blender:** Turn auto-unwrapping OFF.
-    * You can technically use Substance Painter Auto Unwrap if you re-import the fbx into blender: Object Mode ➡️ Select Object ➡️ Link/Transfer Data ➡️ Copy UV Maps.
+    * You can technically use Substance Painter Auto Unwrap if you re-import the fbx into blender: Object Mode ➡️ Select Object ➡️ Link/Transfer Data ➡️ Copy UV Maps. 7-8 is quite bad. If you're getting slowdown go to 4.
 * 🟦 Unreal
   * **Import:** Content Drawer ➡️ New Folder ➡️ Import
     * Choose your favorite master material on the Import screen. Avoids having to re-assign dozens of bad master materials.
