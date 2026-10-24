@@ -40,7 +40,7 @@ UE5 Mannequin Explained: https://www.youtube.com/watch?v=CgqYlF45fcM
     * Keep polycount reasonable, especially for animated characters. (No > 1 million poly assets, please)
     * If you get animations shrinking, is because the size and/or scale isnt right.
     * Root bone needs to be renamed from the default "**Armature**" otherwise import error saying the ref post is incorrect.
-  * **Paint Weight Optimise** Weight Paint Mode ➡️ Vertex Selection Mode ➡️ Select All ➡️ Weights ➡️ Limit Total. Don't go lower than 4.
+  * **Paint Weight Optimise** Weight Paint Mode ➡️ Vertex Selection Mode ➡️ Select All ➡️ Weights ➡️ Limit Total. Don't go lower than 4. ([source](https://www.reddit.com/r/godot/comments/1sa7n7w/comment/odu9e9i/))
 * 🟩 Substance Painter
   * **Export textures using the Unreal preset:** It will give you Base, Normal and ORM, AO.
   * **Unwrap from Blender:** Turn auto-unwrapping OFF.
